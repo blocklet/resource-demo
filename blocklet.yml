@@ -1,0 +1,16 @@
+version: 1.0.0
+did: z2qa5D4dYa6uTbpgwTG8uUcFrNsUYFxZGc7dq
+name: z2qa5D4dYa6uTbpgwTG8uUcFrNsUYFxZGc7dq
+title: Resource Demo
+description: Resource Demo for testing
+license: ''
+author:
+  name: linchen
+specVersion: 1.2.4
+logo: logo.png
+community: ''
+documentation: ''
+homepage: ''
+screenshots: []
+resources:
+  - /assets

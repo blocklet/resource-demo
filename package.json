@@ -1,0 +1,9 @@
+{
+  "name": "resource-demo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "bundle": "rm -rf .blocklet && blocklet bundle --create-release"
+  },
+  "dependencies": {}
+}

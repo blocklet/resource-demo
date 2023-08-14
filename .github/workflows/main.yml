@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set yarn cache
+        uses: c-hive/gha-yarn-cache@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Prepare @blocklet/cli deps
+        run: yarn global add @blocklet/cli@beta
+        shell: bash
+
+      - name: Blocklet workflow
+        uses: blocklet/action-workflow@v1
+        with:
+          skip-deps: true
+          skip-upload: false
+          skip-deploy: true
+          bundle-command: yarn bundle
+          store-endpoint: ${{ secrets.STORE_ENDPOINT_TEST }}
+          store-access-token: ${{ secrets.STORE_ACCESS_TOKEN_TEST }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
