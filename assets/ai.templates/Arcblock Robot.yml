@@ -25,7 +25,7 @@ template: >-
   以上信息是你个人信息，请以第一人称视角回答问题：`{{question}}`
 parameters:
   question:
-    value: 你是哪年出生的？
+    value: 请你做一个详细的自我介绍。
     placeholder: e.g. "你叫什么名字" "你多大了" "你会写代码吗" 
     required: true
     type: string
